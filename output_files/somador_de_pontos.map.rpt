@@ -1,0 +1,841 @@
+Analysis & Synthesis report for somador_de_pontos
+Fri May 20 13:46:21 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "BCD_control:BCD_control_wrapper"
+ 12. Port Connectivity Checks: "binary_to_BCD:bcd_contador"
+ 13. Port Connectivity Checks: "binary_to_BCD:bcd|add3:m6"
+ 14. Port Connectivity Checks: "binary_to_BCD:bcd|add3:m1"
+ 15. Port Connectivity Checks: "binary_to_BCD:bcd"
+ 16. Port Connectivity Checks: "emitir_sinalizacao:sinalizador|magnitude_comparator_8_bits:comp_m"
+ 17. Port Connectivity Checks: "buzzer_sing:singer|magnitude_comparator_8_bits:comb_12"
+ 18. Port Connectivity Checks: "load_counter:comb_12"
+ 19. Port Connectivity Checks: "adder_one_byte:somador_completo_one_byte|magnitude_comparator_8_bits:x"
+ 20. Port Connectivity Checks: "adder_one_byte:somador_completo_one_byte|full_adder:a7"
+ 21. Port Connectivity Checks: "adder_one_byte:somador_completo_one_byte"
+ 22. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_14"
+ 23. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_13"
+ 24. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_12"
+ 25. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_11"
+ 26. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_10"
+ 27. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_9"
+ 28. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_8"
+ 29. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_7"
+ 30. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_6"
+ 31. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_5"
+ 32. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_4"
+ 33. Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_3"
+ 34. Port Connectivity Checks: "frequency_divider:Divisor_milagroso"
+ 35. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri May 20 13:46:21 2022       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; somador_de_pontos                           ;
+; Top-level Entity Name       ; main_pbl                                    ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 139                                         ;
+; Total pins                  ; 30                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; main_pbl           ; somador_de_pontos  ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; main_pbl.v                       ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v                    ;         ;
+; chaves.v                         ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/chaves.v                      ;         ;
+; full_adder.v                     ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/full_adder.v                  ;         ;
+; adder_one_byte.v                 ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/adder_one_byte.v              ;         ;
+; magnitude_comparator_4_bits.v    ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/magnitude_comparator_4_bits.v ;         ;
+; magnitude_comparator_8_bits.v    ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/magnitude_comparator_8_bits.v ;         ;
+; emitir_sinalizacao.v             ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/emitir_sinalizacao.v          ;         ;
+; add3.v                           ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v                        ;         ;
+; binary_to_BCD.v                  ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/binary_to_BCD.v               ;         ;
+; refreshcounter.v                 ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/refreshcounter.v              ;         ;
+; anode_control.v                  ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/anode_control.v               ;         ;
+; BCD_control.v                    ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v                 ;         ;
+; bcd_to_display.v                 ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v              ;         ;
+; flipflopT.v                      ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/flipflopT.v                   ;         ;
+; frequency_divider.v              ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v           ;         ;
+; flipflopJK.v                     ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/flipflopJK.v                  ;         ;
+; load_counter.v                   ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/load_counter.v                ;         ;
+; entradas_sel_tempo.v             ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/entradas_sel_tempo.v          ;         ;
+; buzzer_sing.v                    ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/buzzer_sing.v                 ;         ;
+; mux_sum.v                        ; yes             ; User Verilog HDL File        ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v                     ;         ;
+; registert.v                      ; yes             ; Auto-Found Verilog HDL File  ; D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/registert.v                   ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                            ;
++---------------------------------------------+----------------------------------------------------------+
+; Resource                                    ; Usage                                                    ;
++---------------------------------------------+----------------------------------------------------------+
+; Total logic elements                        ; 139                                                      ;
+;     -- Combinational with no register       ; 114                                                      ;
+;     -- Register only                        ; 7                                                        ;
+;     -- Combinational with a register        ; 18                                                       ;
+;                                             ;                                                          ;
+; Logic element usage by number of LUT inputs ;                                                          ;
+;     -- 4 input functions                    ; 76                                                       ;
+;     -- 3 input functions                    ; 33                                                       ;
+;     -- 2 input functions                    ; 11                                                       ;
+;     -- 1 input functions                    ; 12                                                       ;
+;     -- 0 input functions                    ; 0                                                        ;
+;                                             ;                                                          ;
+; Logic elements by mode                      ;                                                          ;
+;     -- normal mode                          ; 139                                                      ;
+;     -- arithmetic mode                      ; 0                                                        ;
+;     -- qfbk mode                            ; 0                                                        ;
+;     -- register cascade mode                ; 0                                                        ;
+;     -- synchronous clear/load mode          ; 0                                                        ;
+;     -- asynchronous clear/load mode         ; 0                                                        ;
+;                                             ;                                                          ;
+; Total registers                             ; 25                                                       ;
+; I/O pins                                    ; 30                                                       ;
+; Maximum fan-out node                        ; refreshcounter:Refreshcounter_wrapper|refresh_counter[1] ;
+; Maximum fan-out                             ; 16                                                       ;
+; Total fan-out                               ; 487                                                      ;
+; Average fan-out                             ; 2.88                                                     ;
++---------------------------------------------+----------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                ;
++-----------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node                    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                              ; Entity Name                 ; Library Name ;
++-----------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------+-----------------------------+--------------+
+; |main_pbl                                     ; 139 (0)     ; 25           ; 0          ; 30   ; 0            ; 114 (0)      ; 7 (0)             ; 18 (0)           ; 0 (0)           ; 0 (0)      ; |main_pbl                                                                        ; main_pbl                    ; work         ;
+;    |BCD_control:BCD_control_wrapper|          ; 14 (14)     ; 0            ; 0          ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|BCD_control:BCD_control_wrapper                                        ; BCD_control                 ; work         ;
+;    |adder_one_byte:somador_completo_one_byte| ; 20 (0)      ; 0            ; 0          ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte                               ; adder_one_byte              ; work         ;
+;       |full_adder:a1|                         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|full_adder:a1                 ; full_adder                  ; work         ;
+;       |full_adder:a2|                         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|full_adder:a2                 ; full_adder                  ; work         ;
+;       |full_adder:a3|                         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|full_adder:a3                 ; full_adder                  ; work         ;
+;       |full_adder:a4|                         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|full_adder:a4                 ; full_adder                  ; work         ;
+;       |full_adder:a5|                         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|full_adder:a5                 ; full_adder                  ; work         ;
+;       |full_adder:a6|                         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|full_adder:a6                 ; full_adder                  ; work         ;
+;       |full_adder:a7|                         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|full_adder:a7                 ; full_adder                  ; work         ;
+;       |magnitude_comparator_8_bits:x|         ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|magnitude_comparator_8_bits:x ; magnitude_comparator_8_bits ; work         ;
+;       |mux_sum:comb_12|                       ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|adder_one_byte:somador_completo_one_byte|mux_sum:comb_12               ; mux_sum                     ; work         ;
+;    |anode_control:anode_control_wrapper|      ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|anode_control:anode_control_wrapper                                    ; anode_control               ; work         ;
+;    |bcd_to_display:bcd7s_c1|                  ; 15 (15)     ; 0            ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|bcd_to_display:bcd7s_c1                                                ; bcd_to_display              ; work         ;
+;    |bcd_to_display:bcd7s_c2|                  ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|bcd_to_display:bcd7s_c2                                                ; bcd_to_display              ; work         ;
+;    |bcd_to_display:bcd7s_sum1|                ; 15 (15)     ; 0            ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|bcd_to_display:bcd7s_sum1                                              ; bcd_to_display              ; work         ;
+;    |bcd_to_display:bcd7s_sum2|                ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|bcd_to_display:bcd7s_sum2                                              ; bcd_to_display              ; work         ;
+;    |binary_to_BCD:bcd_contador|               ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd_contador                                             ; binary_to_BCD               ; work         ;
+;       |add3:m4|                               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd_contador|add3:m4                                     ; add3                        ; work         ;
+;       |add3:m5|                               ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd_contador|add3:m5                                     ; add3                        ; work         ;
+;    |binary_to_BCD:bcd|                        ; 15 (0)      ; 0            ; 0          ; 0    ; 0            ; 15 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd                                                      ; binary_to_BCD               ; work         ;
+;       |add3:m2|                               ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd|add3:m2                                              ; add3                        ; work         ;
+;       |add3:m3|                               ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd|add3:m3                                              ; add3                        ; work         ;
+;       |add3:m4|                               ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd|add3:m4                                              ; add3                        ; work         ;
+;       |add3:m5|                               ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|binary_to_BCD:bcd|add3:m5                                              ; add3                        ; work         ;
+;    |buzzer_sing:singer|                       ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|buzzer_sing:singer                                                     ; buzzer_sing                 ; work         ;
+;       |magnitude_comparator_8_bits:comb_12|   ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|buzzer_sing:singer|magnitude_comparator_8_bits:comb_12                 ; magnitude_comparator_8_bits ; work         ;
+;    |chaves:keys|                              ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|chaves:keys                                                            ; chaves                      ; work         ;
+;    |emitir_sinalizacao:sinalizador|           ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|emitir_sinalizacao:sinalizador                                         ; emitir_sinalizacao          ; work         ;
+;    |entradas_sel_tempo:comb_3|                ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|entradas_sel_tempo:comb_3                                              ; entradas_sel_tempo          ; work         ;
+;    |frequency_divider:Divisor_milagroso|      ; 11 (0)      ; 11           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 11 (0)           ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso                                    ; frequency_divider           ; work         ;
+;       |flipflopT:comb_10|                     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_10                  ; flipflopT                   ; work         ;
+;       |flipflopT:comb_11|                     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_11                  ; flipflopT                   ; work         ;
+;       |flipflopT:comb_12|                     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_12                  ; flipflopT                   ; work         ;
+;       |flipflopT:comb_13|                     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_13                  ; flipflopT                   ; work         ;
+;       |flipflopT:comb_3|                      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_3                   ; flipflopT                   ; work         ;
+;       |flipflopT:comb_4|                      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_4                   ; flipflopT                   ; work         ;
+;       |flipflopT:comb_5|                      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_5                   ; flipflopT                   ; work         ;
+;       |flipflopT:comb_6|                      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_6                   ; flipflopT                   ; work         ;
+;       |flipflopT:comb_7|                      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_7                   ; flipflopT                   ; work         ;
+;       |flipflopT:comb_8|                      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_8                   ; flipflopT                   ; work         ;
+;       |flipflopT:comb_9|                      ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|frequency_divider:Divisor_milagroso|flipflopT:comb_9                   ; flipflopT                   ; work         ;
+;    |load_counter:comb_12|                     ; 12 (1)      ; 5            ; 0          ; 0    ; 0            ; 7 (1)        ; 0 (0)             ; 5 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|load_counter:comb_12                                                   ; load_counter                ; work         ;
+;       |flipflopJK:f0|                         ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|load_counter:comb_12|flipflopJK:f0                                     ; flipflopJK                  ; work         ;
+;       |flipflopJK:f1|                         ; 2 (2)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|load_counter:comb_12|flipflopJK:f1                                     ; flipflopJK                  ; work         ;
+;       |flipflopJK:f2|                         ; 3 (3)       ; 1            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|load_counter:comb_12|flipflopJK:f2                                     ; flipflopJK                  ; work         ;
+;       |flipflopJK:f3|                         ; 2 (2)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|load_counter:comb_12|flipflopJK:f3                                     ; flipflopJK                  ; work         ;
+;       |flipflopJK:f4|                         ; 3 (3)       ; 1            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |main_pbl|load_counter:comb_12|flipflopJK:f4                                     ; flipflopJK                  ; work         ;
+;    |refreshcounter:Refreshcounter_wrapper|    ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |main_pbl|refreshcounter:Refreshcounter_wrapper                                  ; refreshcounter              ; work         ;
+;    |registerT:registrador|                    ; 7 (7)       ; 7            ; 0          ; 0    ; 0            ; 0 (0)        ; 7 (7)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main_pbl|registerT:registrador                                                  ; registerT                   ; work         ;
++-----------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                           ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal            ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; bcd_to_display:bcd7s_c1|anodo[0]                    ; bcd_to_display:bcd7s_c1|Mux7   ; yes                    ;
+; bcd_to_display:bcd7s_sum2|anodo[0]                  ; bcd_to_display:bcd7s_sum2|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum1|anodo[0]                  ; bcd_to_display:bcd7s_sum1|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum1|anodo[1]                  ; bcd_to_display:bcd7s_sum1|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum2|anodo[1]                  ; bcd_to_display:bcd7s_sum2|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_c1|anodo[1]                    ; bcd_to_display:bcd7s_c1|Mux7   ; yes                    ;
+; bcd_to_display:bcd7s_c1|anodo[2]                    ; bcd_to_display:bcd7s_c1|Mux7   ; yes                    ;
+; bcd_to_display:bcd7s_sum2|anodo[2]                  ; bcd_to_display:bcd7s_sum2|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum1|anodo[2]                  ; bcd_to_display:bcd7s_sum1|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum2|anodo[3]                  ; bcd_to_display:bcd7s_sum2|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_c1|anodo[3]                    ; bcd_to_display:bcd7s_c1|Mux7   ; yes                    ;
+; bcd_to_display:bcd7s_sum1|anodo[3]                  ; bcd_to_display:bcd7s_sum1|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_c1|anodo[4]                    ; bcd_to_display:bcd7s_c1|Mux7   ; yes                    ;
+; bcd_to_display:bcd7s_sum2|anodo[4]                  ; bcd_to_display:bcd7s_sum2|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum1|anodo[4]                  ; bcd_to_display:bcd7s_sum1|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum2|anodo[5]                  ; bcd_to_display:bcd7s_sum2|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_c1|anodo[5]                    ; bcd_to_display:bcd7s_c1|Mux7   ; yes                    ;
+; bcd_to_display:bcd7s_sum1|anodo[5]                  ; bcd_to_display:bcd7s_sum1|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_c1|anodo[6]                    ; bcd_to_display:bcd7s_c1|Mux7   ; yes                    ;
+; bcd_to_display:bcd7s_sum2|anodo[6]                  ; bcd_to_display:bcd7s_sum2|Mux7 ; yes                    ;
+; bcd_to_display:bcd7s_sum1|anodo[6]                  ; bcd_to_display:bcd7s_sum1|Mux7 ; yes                    ;
+; Number of user-specified and inferred latches = 21  ;                                ;                        ;
++-----------------------------------------------------+--------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 25    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_pbl|BCD_control:BCD_control_wrapper|Mux8 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BCD_control:BCD_control_wrapper"                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; digito ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "binary_to_BCD:bcd_contador"                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; A[7..5]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HUNDREDS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "binary_to_BCD:bcd|add3:m6" ;
++-------+-------+----------+----------------------------+
+; Port  ; Type  ; Severity ; Details                    ;
++-------+-------+----------+----------------------------+
+; in[3] ; Input ; Info     ; Stuck at GND               ;
++-------+-------+----------+----------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "binary_to_BCD:bcd|add3:m1" ;
++-------+-------+----------+----------------------------+
+; Port  ; Type  ; Severity ; Details                    ;
++-------+-------+----------+----------------------------+
+; in[3] ; Input ; Info     ; Stuck at GND               ;
++-------+-------+----------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "binary_to_BCD:bcd"                                                                      ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; HUNDREDS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "emitir_sinalizacao:sinalizador|magnitude_comparator_8_bits:comp_m" ;
++---------+-------+----------+------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                          ;
++---------+-------+----------+------------------------------------------------------------------+
+; B[6..5] ; Input ; Info     ; Stuck at VCC                                                     ;
+; B[1..0] ; Input ; Info     ; Stuck at VCC                                                     ;
+; B[4..2] ; Input ; Info     ; Stuck at GND                                                     ;
+; B[7]    ; Input ; Info     ; Stuck at GND                                                     ;
++---------+-------+----------+------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "buzzer_sing:singer|magnitude_comparator_8_bits:comb_12"                                                                                         ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                   ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; A          ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "A[7..1]" will be connected to GND. ;
+; A          ; Input  ; Info     ; Stuck at GND                                                                                                                              ;
+; B[7..5]    ; Input  ; Info     ; Stuck at GND                                                                                                                              ;
+; saida_plus ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                  ;
+; saida_less ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                  ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "load_counter:comb_12"                                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; contagem ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_one_byte:somador_completo_one_byte|magnitude_comparator_8_bits:x"                   ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; B[6..5]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[1..0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[4..2]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[7]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; saida_e    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida_less ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_one_byte:somador_completo_one_byte|full_adder:a7"                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; carry_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder_one_byte:somador_completo_one_byte"                                                                                                                                                 ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; carry_in     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; carry_in[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_14"                                                                                                                              ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; q     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++-------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_13"                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_12"                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_11"                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_10"                                                                                                                             ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_9"                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_8"                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_7"                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_6"                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_5"                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_4"                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso|flipflopT:comb_3"                                                                                                                              ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; t     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; t[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency_divider:Divisor_milagroso"                                                                                                                                                  ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri May 20 13:46:06 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off somador_de_pontos -c somador_de_pontos
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file main_pbl.v
+    Info (12023): Found entity 1: main_pbl File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file chaves.v
+    Info (12023): Found entity 1: chaves File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/chaves.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file entradas_test.v
+    Info (12023): Found entity 1: entradas_test File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/entradas_test.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/full_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder_one_byte.v
+    Info (12023): Found entity 1: adder_one_byte File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/adder_one_byte.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file magnitude_comparator_4_bits.v
+    Info (12023): Found entity 1: magnitude_comparator_4_bits File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/magnitude_comparator_4_bits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file magnitude_comparator_8_bits.v
+    Info (12023): Found entity 1: magnitude_comparator_8_bits File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/magnitude_comparator_8_bits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file emitir_sinalizacao.v
+    Info (12023): Found entity 1: emitir_sinalizacao File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/emitir_sinalizacao.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file add3.v
+    Info (12023): Found entity 1: add3 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file binary_to_bcd.v
+    Info (12023): Found entity 1: binary_to_BCD File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/binary_to_BCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file display_7_segments.v
+    Info (12023): Found entity 1: display_7_Segments File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/display_7_Segments.v Line: 69
+Info (12021): Found 1 design units, including 1 entities, in source file refreshcounter.v
+    Info (12023): Found entity 1: refreshcounter File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/refreshcounter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file anode_control.v
+    Info (12023): Found entity 1: anode_control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/anode_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_control.v
+    Info (12023): Found entity 1: BCD_control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_to_display.v
+    Info (12023): Found entity 1: bcd_to_display File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
+    Info (12023): Found entity 1: clock_divider File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flipflopt.v
+    Info (12023): Found entity 1: flipflopT File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/flipflopT.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file frequency_divider.v
+    Info (12023): Found entity 1: frequency_divider File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_decre_5bits.v
+    Info (12023): Found entity 1: contador_decre_5bits File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/contador_decre_5bits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flipflopjk.v
+    Info (12023): Found entity 1: flipflopJK File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/flipflopJK.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file load_counter.v
+    Info (12023): Found entity 1: load_counter File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/load_counter.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file entradas_sel_tempo.v
+    Info (12023): Found entity 1: entradas_sel_tempo File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/entradas_sel_tempo.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer_sing.v
+    Info (12023): Found entity 1: buzzer_sing File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/buzzer_sing.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_sum.v
+    Info (12023): Found entity 1: mux_sum File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flipflopd.v
+    Info (12023): Found entity 1: flipflopD File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/flipflopD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file debou.v
+    Info (12023): Found entity 1: debou File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/debou.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fd_db.v
+    Info (12023): Found entity 1: fd_db File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at main_pbl.v(42): created implicit net for "clock_dividido" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at debou.v(17): created implicit net for "signal_bou" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/debou.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(5): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 5
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(6): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 6
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(7): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 7
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(8): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(9): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(10): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(11): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(12): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(13): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(14): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(15): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(16): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at main_pbl.v(73): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 73
+Critical Warning (10846): Verilog HDL Instantiation warning at adder_one_byte.v(49): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/adder_one_byte.v Line: 49
+Critical Warning (10846): Verilog HDL Instantiation warning at main_pbl.v(81): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 81
+Critical Warning (10846): Verilog HDL Instantiation warning at buzzer_sing.v(19): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/buzzer_sing.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(5): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 5
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(6): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 6
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(7): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 7
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(8): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(9): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(10): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(11): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(12): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(14): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(15): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(16): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(17): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(18): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 18
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(19): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(20): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(22): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(23): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(24): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(25): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(26): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 26
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(27): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 27
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(29): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(30): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(31): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 31
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(32): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 32
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(33): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 33
+Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider.v(34): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/clock_divider.v Line: 34
+Critical Warning (10846): Verilog HDL Instantiation warning at debou.v(12): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/debou.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at debou.v(14): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/debou.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at debou.v(15): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/debou.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(5): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 5
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(6): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 6
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(7): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 7
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(8): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(9): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(10): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(11): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(12): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(13): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(14): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(15): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(16): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(17): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(18): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 18
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(19): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(20): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(21): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 21
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(22): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(23): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(24): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at fd_db.v(25): instance has no name File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/fd_db.v Line: 25
+Info (12127): Elaborating entity "main_pbl" for the top level hierarchy
+Info (12128): Elaborating entity "frequency_divider" for hierarchy "frequency_divider:Divisor_milagroso" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 42
+Info (12128): Elaborating entity "flipflopT" for hierarchy "frequency_divider:Divisor_milagroso|flipflopT:comb_3" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/frequency_divider.v Line: 5
+Info (12128): Elaborating entity "refreshcounter" for hierarchy "refreshcounter:Refreshcounter_wrapper" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 49
+Warning (10230): Verilog HDL assignment warning at refreshcounter.v(10): truncated value with size 32 to match size of target (2) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/refreshcounter.v Line: 10
+Info (12128): Elaborating entity "chaves" for hierarchy "chaves:keys" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 71
+Info (12128): Elaborating entity "entradas_sel_tempo" for hierarchy "entradas_sel_tempo:comb_3" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 73
+Warning (12125): Using design file registert.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: registerT File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/registert.v Line: 18
+Info (12128): Elaborating entity "registerT" for hierarchy "registerT:registrador" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 75
+Warning (10036): Verilog HDL or VHDL warning at registerT.v(31): object "b7" assigned a value but never read File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/registerT.v Line: 31
+Warning (10230): Verilog HDL assignment warning at registerT.v(44): truncated value with size 8 to match size of target (1) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/registerT.v Line: 44
+Info (12128): Elaborating entity "adder_one_byte" for hierarchy "adder_one_byte:somador_completo_one_byte" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 79
+Info (12128): Elaborating entity "full_adder" for hierarchy "adder_one_byte:somador_completo_one_byte|full_adder:a1" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/adder_one_byte.v Line: 26
+Info (12128): Elaborating entity "magnitude_comparator_8_bits" for hierarchy "adder_one_byte:somador_completo_one_byte|magnitude_comparator_8_bits:x" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/adder_one_byte.v Line: 46
+Info (12128): Elaborating entity "magnitude_comparator_4_bits" for hierarchy "adder_one_byte:somador_completo_one_byte|magnitude_comparator_8_bits:x|magnitude_comparator_4_bits:m1" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/magnitude_comparator_8_bits.v Line: 44
+Info (12128): Elaborating entity "mux_sum" for hierarchy "adder_one_byte:somador_completo_one_byte|mux_sum:comb_12" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/adder_one_byte.v Line: 49
+Info (12128): Elaborating entity "load_counter" for hierarchy "load_counter:comb_12" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 81
+Info (12128): Elaborating entity "flipflopJK" for hierarchy "load_counter:comb_12|flipflopJK:f0" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/load_counter.v Line: 29
+Info (12128): Elaborating entity "buzzer_sing" for hierarchy "buzzer_sing:singer" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 83
+Warning (10230): Verilog HDL assignment warning at buzzer_sing.v(6): truncated value with size 8 to match size of target (1) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/buzzer_sing.v Line: 6
+Info (12128): Elaborating entity "emitir_sinalizacao" for hierarchy "emitir_sinalizacao:sinalizador" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 89
+Info (12128): Elaborating entity "binary_to_BCD" for hierarchy "binary_to_BCD:bcd" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 112
+Info (12128): Elaborating entity "add3" for hierarchy "binary_to_BCD:bcd|add3:m1" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/binary_to_BCD.v Line: 15
+Info (12128): Elaborating entity "anode_control" for hierarchy "anode_control:anode_control_wrapper" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 120
+Info (12128): Elaborating entity "bcd_to_display" for hierarchy "bcd_to_display:bcd7s_sum1" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 130
+Warning (10270): Verilog HDL Case Statement warning at bcd_to_display.v(10): incomplete case statement has no default case item File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at bcd_to_display.v(8): inferring latch(es) for variable "anodo", which holds its previous value in one or more paths through the always construct File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (10041): Inferred latch for "anodo[0]" at bcd_to_display.v(8) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (10041): Inferred latch for "anodo[1]" at bcd_to_display.v(8) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (10041): Inferred latch for "anodo[2]" at bcd_to_display.v(8) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (10041): Inferred latch for "anodo[3]" at bcd_to_display.v(8) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (10041): Inferred latch for "anodo[4]" at bcd_to_display.v(8) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (10041): Inferred latch for "anodo[5]" at bcd_to_display.v(8) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (10041): Inferred latch for "anodo[6]" at bcd_to_display.v(8) File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (12128): Elaborating entity "BCD_control" for hierarchy "BCD_control:BCD_control_wrapper" File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 162
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(24): variable "digit1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(25): variable "segm1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(29): variable "digit2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 29
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(30): variable "segm2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 30
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(34): variable "digit3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(35): variable "segm3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 35
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(39): variable "digit4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 39
+Warning (10235): Verilog HDL Always Construct warning at BCD_control.v(40): variable "segm4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/BCD_control.v Line: 40
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[0]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[2]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[3]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[4]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[5]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[6]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[0]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[2]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[3]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[4]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[5]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_c2|anodo[6]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (12241): 15 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch bcd_to_display:bcd7s_c1|anodo[0] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd_contador|add3:m5|WideOr2 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum2|anodo[0] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd|add3:m3|WideOr0 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum1|anodo[0] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal adder_one_byte:somador_completo_one_byte|mux_sum:comb_12|soma[1] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 6
+Warning (13012): Latch bcd_to_display:bcd7s_sum1|anodo[1] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal adder_one_byte:somador_completo_one_byte|mux_sum:comb_12|soma[1] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 6
+Warning (13012): Latch bcd_to_display:bcd7s_sum2|anodo[1] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd|add3:m3|WideOr0 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_c1|anodo[1] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd_contador|add3:m5|WideOr1 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_c1|anodo[2] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd_contador|add3:m5|WideOr1 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum2|anodo[2] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd|add3:m3|WideOr0 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum1|anodo[2] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal adder_one_byte:somador_completo_one_byte|mux_sum:comb_12|soma[1] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 6
+Warning (13012): Latch bcd_to_display:bcd7s_sum2|anodo[3] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd|add3:m3|WideOr0 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_c1|anodo[3] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd_contador|add3:m5|WideOr2 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum1|anodo[3] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal adder_one_byte:somador_completo_one_byte|mux_sum:comb_12|soma[1] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 6
+Warning (13012): Latch bcd_to_display:bcd7s_c1|anodo[4] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd_contador|add3:m5|WideOr1 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum2|anodo[4] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal adder_one_byte:somador_completo_one_byte|mux_sum:comb_12|soma[2] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 6
+Warning (13012): Latch bcd_to_display:bcd7s_sum1|anodo[4] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registerT:registrador|bs[0] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/registerT.v Line: 49
+Warning (13012): Latch bcd_to_display:bcd7s_sum2|anodo[5] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd|add3:m3|WideOr0 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_c1|anodo[5] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd_contador|add3:m5|WideOr2 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum1|anodo[5] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal adder_one_byte:somador_completo_one_byte|mux_sum:comb_12|soma[1] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 6
+Warning (13012): Latch bcd_to_display:bcd7s_c1|anodo[6] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd_contador|add3:m5|WideOr2 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum2|anodo[6] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal binary_to_BCD:bcd|add3:m3|WideOr0 File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/add3.v Line: 7
+Warning (13012): Latch bcd_to_display:bcd7s_sum1|anodo[6] has unsafe behavior File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal adder_one_byte:somador_completo_one_byte|mux_sum:comb_12|soma[1] File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/mux_sum.v Line: 6
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "segmentos[7]" is stuck at VCC File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/main_pbl.v Line: 26
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_sum2|anodo[0]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_sum2|anodo[1]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_sum2|anodo[2]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_sum2|anodo[3]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_sum2|anodo[4]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_sum2|anodo[5]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Warning (14026): LATCH primitive "bcd_to_display:bcd7s_sum2|anodo[6]" is permanently enabled File: D:/workspace/2022/verilog/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/bcd_to_display.v Line: 8
+Info (21057): Implemented 169 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 19 output pins
+    Info (21061): Implemented 139 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 149 warnings
+    Info: Peak virtual memory: 4694 megabytes
+    Info: Processing ended: Fri May 20 13:46:21 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:27
+
+

@@ -1,0 +1,28 @@
+module chaves(
+	//+1
+	input A,
+	//+2
+	input B,
+	//+3
+	input C,
+	//-1
+	input D,
+	//-2
+	input E,
+	//-3
+	input F,
+	//saida
+	output [7:0]bin_8bits
+);
+
+
+assign bin_8bits[0] = (A & !B & !C & !D & !E & !F) + (!A & !B & C & !D & !E & !F) + (!A & !B & !C & !E & !F & D) + (!A & !B & !C & !D &  !E & F);
+assign bin_8bits[1] = (!A & B & !C & !D & !E & !F) + (!A & !B & C & !D & !E & !F) + (!A & !B & !C & !E & !F & D) + (!A & !B & !C & !D &  E & !F);
+assign bin_8bits[2] = (!A & !B & !C & D & !E & !F) + (!A & !B & !C & !D & E & !F) + (!A & !B & !C & !D & !E & F);
+assign bin_8bits[3] = (!A & !B & !C & D & !E & !F) + (!A & !B & !C & !D & E & !F) + (!A & !B & !C & !D & !E & F);
+assign bin_8bits[4] = (!A & !B & !C & D & !E & !F) + (!A & !B & !C & !D & E & !F) + (!A & !B & !C & !D & !E & F);
+assign bin_8bits[5] = (!A & !B & !C & D & !E & !F) + (!A & !B & !C & !D & E & !F) + (!A & !B & !C & !D & !E & F);
+assign bin_8bits[6] = (!A & !B & !C & D & !E & !F) + (!A & !B & !C & !D & E & !F) + (!A & !B & !C & !D & !E & F);
+assign bin_8bits[7] = (!A & !B & !C & D & !E & !F) + (!A & !B & !C & !D & E & !F) + (!A & !B & !C & !D & !E & F);
+
+endmodule

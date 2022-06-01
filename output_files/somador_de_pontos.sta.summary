@@ -1,0 +1,185 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'bt0'
+Slack : -21.715
+TNS   : -141.270
+
+Type  : Setup 'clk'
+Slack : -12.390
+TNS   : -67.668
+
+Type  : Setup 'load_counter:comb_12|flipflopJK:f1|Qout'
+Slack : -4.602
+TNS   : -29.603
+
+Type  : Setup 'clk_segs'
+Slack : -3.986
+TNS   : -15.342
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_13|q'
+Slack : -1.493
+TNS   : -2.724
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_3|q'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_7|q'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_11|q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_5|q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_9|q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_12|q'
+Slack : 0.802
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_4|q'
+Slack : 0.808
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_10|q'
+Slack : 0.819
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_8|q'
+Slack : 0.825
+TNS   : 0.000
+
+Type  : Setup 'frequency_divider:Divisor_milagroso|flipflopT:comb_6|q'
+Slack : 1.185
+TNS   : 0.000
+
+Type  : Hold 'bt0'
+Slack : -9.777
+TNS   : -66.042
+
+Type  : Hold 'load_counter:comb_12|flipflopJK:f1|Qout'
+Slack : -6.055
+TNS   : -39.094
+
+Type  : Hold 'clk_segs'
+Slack : -2.155
+TNS   : -8.022
+
+Type  : Hold 'clk'
+Slack : -1.807
+TNS   : -1.807
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_6|q'
+Slack : -1.239
+TNS   : -1.239
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_8|q'
+Slack : -0.879
+TNS   : -0.879
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_10|q'
+Slack : -0.873
+TNS   : -0.873
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_4|q'
+Slack : -0.862
+TNS   : -0.862
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_12|q'
+Slack : -0.856
+TNS   : -0.856
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_11|q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_5|q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_9|q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_3|q'
+Slack : -0.520
+TNS   : -0.520
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_7|q'
+Slack : -0.520
+TNS   : -0.520
+
+Type  : Hold 'frequency_divider:Divisor_milagroso|flipflopT:comb_13|q'
+Slack : 1.677
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'bt0'
+Slack : -9.920
+TNS   : -1220.053
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'clk_segs'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'load_counter:comb_12|flipflopJK:f1|Qout'
+Slack : -1.099
+TNS   : -32.970
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_10|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_11|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_12|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_13|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_3|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_4|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_5|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_6|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_7|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_8|q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'frequency_divider:Divisor_milagroso|flipflopT:comb_9|q'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

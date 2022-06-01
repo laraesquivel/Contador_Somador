@@ -1,0 +1,102 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/aluno/Documentos/mi_cd_laraesquivel_macedo5/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/simulation/qsim
+vadder_one_byte
+Z1 !s110 1652442137
+!i10b 1
+!s100 CJRjN4[G9<^dR;`z^W9931
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IzMV`eLR5ZL57YlJVY?i`P2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 d/home/aluno/Documentos/mi_cd_laraesquivel_macedo7/mi_cd_laraesquivel_macedo5/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/simulation/qsim
+w1652442135
+Z5 8somador_de_pontos.vo
+Z6 Fsomador_de_pontos.vo
+!i122 24
+L0 32 761
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1652442137.000000
+Z9 !s107 somador_de_pontos.vo|
+Z10 !s90 -work|work|somador_de_pontos.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vadder_one_byte_vlg_vec_tst
+R1
+!i10b 1
+!s100 VkiL=K5@oHHK23b40FiT40
+R2
+IJ@Q>ZD9`K^D0O2`l_U;Sj3
+R3
+R4
+w1652442134
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+!i122 25
+L0 30 108
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R11
+R12
+vmain_pbl
+Z13 !s110 1652359603
+!i10b 1
+!s100 6ohl;LLEZNZI[gnjEbK[i1
+R2
+IT[^8>[mfTPkzR@nAJ?OaA3
+R3
+R0
+Z14 w1652359602
+R5
+R6
+!i122 22
+L0 32 1597
+R7
+r1
+!s85 0
+31
+Z15 !s108 1652359603.000000
+R9
+R10
+!i113 1
+R11
+R12
+vmain_pbl_vlg_vec_tst
+R13
+!i10b 1
+!s100 CL7m^S9ZZz^hS`iDaTKfE2
+R2
+IiZCJc_P]DRTliO5f^9^fS2
+R3
+R0
+R14
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+!i122 23
+L0 30 124
+R7
+r1
+!s85 0
+31
+R15
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R11
+R12

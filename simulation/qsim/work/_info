@@ -1,0 +1,379 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/workspace/2022/verilog/mi_cd_laraesquivel_macedo/simulation/qsim
+vadder_one_byte
+Z1 !s110 1651802508
+!i10b 1
+!s100 E4189[E3NW5X`=PV5YkNh3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ii]B0J]Z0BJ@>ej6A`W]En2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 dD:/Documentos/UEFS/CD/mi_cd_laraesquivel_macedo (1)/simulation/qsim
+w1649508598
+Z5 8somador_de_pontos.vo
+Z6 Fsomador_de_pontos.vo
+!i122 126
+L0 32 761
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1651802508.000000
+Z9 !s107 somador_de_pontos.vo|
+Z10 !s90 -work|work|somador_de_pontos.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vadder_one_byte_vlg_vec_tst
+R1
+!i10b 1
+!s100 I_>VC2U4Jj0ezNiVD0;OI0
+R2
+I5m8`8mHTH7dc_T?ce7f:S3
+R3
+R4
+w1651802506
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 127
+L0 30 108
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12
+vanode_control
+Z13 !s110 1651842108
+!i10b 1
+!s100 zRdG>C5l<6J8gVe@VIj_`0
+R2
+I<K]N6z5b`nAXN6[L^[_Ef3
+R3
+Z14 d/home/aluno/Documentos/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/simulation/qsim
+Z15 w1651842107
+R5
+R6
+!i122 160
+L0 32 236
+R7
+r1
+!s85 0
+31
+Z16 !s108 1651842108.000000
+R9
+R10
+!i113 1
+R11
+R12
+vanode_control_vlg_vec_tst
+R13
+!i10b 1
+!s100 CZXLf>k4d==?>`bQ]3H7;3
+R2
+IzO9Z1UmA3Rh93bL;6P07S0
+R3
+R14
+R15
+Z17 8Waveform1.vwf.vt
+Z18 FWaveform1.vwf.vt
+!i122 161
+L0 30 32
+R7
+r1
+!s85 0
+31
+R16
+Z19 !s107 Waveform1.vwf.vt|
+Z20 !s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R11
+R12
+vchaves
+Z21 !s110 1652393169
+!i10b 1
+!s100 hj3DSkVW:m3z[Cn4ZFZ2M1
+R2
+I`D9@X1I<8`;LVUYP;Rz5:3
+R3
+Z22 dD:/workspace/2022/verilog/mi_cd_laraesquivel_macedo5/mi_cd_laraesquivel_macedo 2/mi_cd_laraesquivel_macedo (1)/simulation/qsim
+w1652393167
+R5
+R6
+!i122 192
+L0 32 264
+R7
+r1
+!s85 0
+31
+Z23 !s108 1652393169.000000
+R9
+R10
+!i113 1
+R11
+R12
+vchaves_vlg_vec_tst
+R21
+!i10b 1
+!s100 Z@SC9_4Qmm^T^oH2?1J<12
+R2
+I=IiFB361mV0kFTenRZB>W1
+R3
+R22
+w1652393166
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+!i122 193
+L0 30 48
+R7
+r1
+!s85 0
+31
+R23
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R11
+R12
+vemitir_sinalizacao
+Z24 !s110 1649422136
+!i10b 1
+!s100 214YK_H0KUY;lZfR6JlUQ0
+R2
+IkKnN]1bj8aS;4Ec62T1Xa0
+R3
+Z25 d/home/aluno/Documentos/mi_cd_laraesquivel_macedo/simulation/qsim
+w1649422135
+R5
+R6
+!i122 58
+L0 32 225
+R7
+r1
+!s85 0
+31
+Z26 !s108 1649422136.000000
+R9
+R10
+!i113 1
+R11
+R12
+vemitir_sinalizacao_vlg_vec_tst
+R24
+!i10b 1
+!s100 Ifa=l9^DVG[bJS^MoH2iQ1
+R2
+IBNd2CChDc7[1aOZ8eGXzf0
+R3
+R25
+w1649422134
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+!i122 59
+L0 30 58
+R7
+r1
+!s85 0
+31
+R26
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R11
+R12
+ventradas_test
+Z27 !s110 1649334715
+!i10b 1
+!s100 O_K@0[nX`O9oLUoPza4X=3
+R2
+IR^4]GYb=K?7=JB3d?o?8g2
+R3
+R0
+Z28 w1649334713
+R5
+R6
+!i122 28
+L0 32 251
+R7
+r1
+!s85 0
+31
+Z29 !s108 1649334715.000000
+R9
+R10
+!i113 1
+R11
+R12
+ventradas_test_vlg_vec_tst
+R27
+!i10b 1
+!s100 BhRY839^_dj;M;JNQ94WS3
+R2
+IO9GhBVIJTbX9MD:F2F;a81
+R3
+R0
+R28
+R17
+R18
+!i122 29
+L0 30 40
+R7
+r1
+!s85 0
+31
+R29
+R19
+R20
+!i113 1
+R11
+R12
+vmagnitude_comparator_4_bits
+Z30 !s110 1649418641
+!i10b 1
+!s100 04YXk6[0F6XS?C;JQonVH1
+R2
+I?PnoE9=ZBm:f;7n@>e^E>3
+R3
+R25
+w1649418641
+R5
+R6
+!i122 32
+L0 32 474
+R7
+r1
+!s85 0
+31
+Z31 !s108 1649418641.000000
+R9
+R10
+!i113 1
+R11
+R12
+vmagnitude_comparator_4_bits_vlg_vec_tst
+R30
+!i10b 1
+!s100 ZkV1lASI^eV3@:>KI^H;>1
+R2
+IFdGhFzTUzPP@WfSkOX3V:3
+R3
+R25
+w1649418640
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+!i122 33
+L0 30 64
+R7
+r1
+!s85 0
+31
+R31
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R11
+R12
+vmagnitude_comparator_8_bits
+Z32 !s110 1649420836
+!i10b 1
+!s100 G8[14LREjgbckg]2[9H142
+R2
+I8jMa2f_Je:ID3][Xm2ef@1
+R3
+R25
+Z33 w1649420835
+R5
+R6
+!i122 48
+L0 32 887
+R7
+r1
+!s85 0
+31
+Z34 !s108 1649420836.000000
+R9
+R10
+!i113 1
+R11
+R12
+vmagnitude_comparator_8_bits_vlg_vec_tst
+R32
+!i10b 1
+!s100 mCPi3VRozzWF;06kZWe0]3
+R2
+I4Kd66acJ13Kkb:Ae?0KS=0
+R3
+R25
+R33
+Z35 8Waveform4.vwf.vt
+Z36 FWaveform4.vwf.vt
+!i122 49
+L0 30 104
+R7
+r1
+!s85 0
+31
+R34
+!s107 Waveform4.vwf.vt|
+Z37 !s90 -work|work|Waveform4.vwf.vt|
+!i113 1
+R11
+R12
+vmain_pbl
+Z38 !s110 1652398529
+!i10b 1
+!s100 9QaZ<m`:MbgO9l7_^:<X<1
+R2
+IV4fhGd2UPTdi<lXLk=AUi2
+R3
+R22
+w1652398528
+R5
+R6
+!i122 198
+L0 32 2681
+R7
+r1
+!s85 0
+31
+Z39 !s108 1652398529.000000
+R9
+R10
+!i113 1
+R11
+R12
+vmain_pbl_vlg_vec_tst
+R38
+!i10b 1
+!s100 Q>641Z`kkO[fNl7@L>B@92
+R2
+IF8PPkEUTP8TOO1M]CQlKL3
+R3
+R22
+w1652398527
+R35
+R36
+!i122 199
+L0 30 121
+R7
+r1
+!s85 0
+31
+R39
+Z40 !s107 Waveform4.vwf.vt|
+R37
+!i113 1
+R11
+R12

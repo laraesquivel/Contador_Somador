@@ -1,0 +1,18 @@
+module debouncig(
+	input signal,
+	input clk,
+	output singal_bou
+
+);
+
+wire auxQ;
+wire auxQ2;
+
+flipflopD(signal,clk,auxQ);
+flipflopD(auxQ,clk,auxQ2);
+
+assign signal_bou = auxQ & ~auxQ2;
+
+
+
+endmodule

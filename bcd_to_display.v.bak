@@ -1,0 +1,13 @@
+module bcd_to_display(
+
+	input [3:0]digito,
+	output reg [6:0]anodo = 0
+
+);
+
+always@(digito)
+begin
+	case(digito)
+	4'd0:
+	anodo = 8'b1000
+	

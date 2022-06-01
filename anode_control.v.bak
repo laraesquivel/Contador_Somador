@@ -1,0 +1,16 @@
+module anode_control(
+
+	input refreshcounter,
+	
+	output reg [1:0] anode
+
+);
+
+
+always@(refreshcounter)
+begin
+	case(refreshcounter)
+	1'b0:
+		anode = 4'b1110; //digito 1 on
+	1'b1:
+		anode = 4'b1101;

@@ -1,0 +1,23 @@
+module mux_sum(
+
+	input maior,
+	input menor,
+	input igual,
+	input [7:0]sum,
+	output [7:0]soma
+);
+
+assign soma[0] = (igual & ~menor & ~maior & sum[0]) | (maior & ~menor & ~igual & sum[0]);
+assign soma[1] = (igual & ~menor & ~maior & sum[1]) | (maior & ~menor & ~igual & sum[1]);
+assign soma[2] = (igual & ~menor & ~maior & sum[2]) | (maior & ~menor & ~igual & sum[2]);
+assign soma[3] = (igual & ~menor & ~maior & sum[3]) | (maior & ~menor & ~igual & sum[3]);
+assign soma[4] = (igual & ~menor & ~maior & sum[4]) | (maior & ~menor & ~igual & sum[4]);
+assign soma[5] = (igual & ~menor & ~maior & sum[5]) | (maior & ~menor & ~igual & sum[5]);
+assign soma[6] = (igual & ~menor & ~maior & sum[6]) | (maior & ~menor & ~igual & sum[6]);
+assign soma[7] = (igual & ~menor & ~maior & sum[7]) | (maior & ~menor & ~igual & sum[7]);
+
+
+
+
+
+endmodule

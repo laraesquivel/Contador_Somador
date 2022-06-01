@@ -1,0 +1,118 @@
+$comment
+	File created using the following command:
+		vcd file somador_de_pontos.msim.vcd -direction
+$end
+$date
+	Fri May 13 08:42:18 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module adder_one_byte_vlg_vec_tst $end
+$var reg 8 ! a [7:0] $end
+$var reg 8 " b [7:0] $end
+$var reg 1 # carry_in $end
+$var wire 1 $ soma [7] $end
+$var wire 1 % soma [6] $end
+$var wire 1 & soma [5] $end
+$var wire 1 ' soma [4] $end
+$var wire 1 ( soma [3] $end
+$var wire 1 ) soma [2] $end
+$var wire 1 * soma [1] $end
+$var wire 1 + soma [0] $end
+
+$scope module i1 $end
+$var wire 1 , gnd $end
+$var wire 1 - vcc $end
+$var wire 1 . unknown $end
+$var tri1 1 / devclrn $end
+$var tri1 1 0 devpor $end
+$var tri1 1 1 devoe $end
+$var wire 1 2 carry_in~combout $end
+$var wire 1 3 a1|sum~0_combout $end
+$var wire 1 4 a1|carry_out~0_combout $end
+$var wire 1 5 a2|sum~combout $end
+$var wire 1 6 a2|carry_out~0_combout $end
+$var wire 1 7 a3|sum~combout $end
+$var wire 1 8 a3|carry_out~0_combout $end
+$var wire 1 9 a4|sum~combout $end
+$var wire 1 : a4|carry_out~0_combout $end
+$var wire 1 ; a5|sum~combout $end
+$var wire 1 < a5|carry_out~0_combout $end
+$var wire 1 = a6|sum~combout $end
+$var wire 1 > a7|sum~0_combout $end
+$var wire 1 ? a7|sum~combout $end
+$var wire 1 @ b~combout [7] $end
+$var wire 1 A b~combout [6] $end
+$var wire 1 B b~combout [5] $end
+$var wire 1 C b~combout [4] $end
+$var wire 1 D b~combout [3] $end
+$var wire 1 E b~combout [2] $end
+$var wire 1 F b~combout [1] $end
+$var wire 1 G b~combout [0] $end
+$var wire 1 H a~combout [7] $end
+$var wire 1 I a~combout [6] $end
+$var wire 1 J a~combout [5] $end
+$var wire 1 K a~combout [4] $end
+$var wire 1 L a~combout [3] $end
+$var wire 1 M a~combout [2] $end
+$var wire 1 N a~combout [1] $end
+$var wire 1 O a~combout [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11111111 !
+b0 "
+0#
+1+
+1*
+1)
+1(
+1'
+1&
+1%
+0$
+0,
+1-
+x.
+1/
+10
+11
+02
+13
+04
+15
+06
+17
+08
+19
+0:
+1;
+0<
+1=
+1>
+1?
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+z@
+1O
+1N
+1M
+1L
+1K
+1J
+1I
+zH
+$end
+#1000000
